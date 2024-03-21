@@ -43,7 +43,7 @@ dependencies {
 
     implementation project(":thread_hook")
     implementation project(":thread_hook_flipper")
-    implementation project(":thread_dead_lock")
+//    implementation project(":thread_dead_lock")
 
 //    implementation "com.github.LXD312569496.thread-learning:thread_hook:0.0.3"
 //    implementation "com.github.LXD312569496.thread-learning:thread_hook_flipper:0.0.3"

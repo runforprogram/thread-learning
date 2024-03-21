@@ -10,7 +10,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.threadlearning.databinding.ActivityMainBinding
-import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,16 +18,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.toolbar)
-
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
-
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
@@ -38,31 +33,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-
-        Thread(object :Runnable{
-            override fun run() {
-                println("11")
-                Thread.sleep(1000)
-            }
+        Thread({
+            println("11")
+            Thread.sleep(1000)
         },"thread1").start()
-        Thread(object :Runnable{
-            override fun run() {
-                println("11")
-                Thread.sleep(1000)
-            }
-        },"thread2").start()
-        Thread(object :Runnable{
-            override fun run() {
-                println("11")
-                Thread.sleep(1000)
-            }
-        },"thread3").start()
-        Thread(object :Runnable{
-            override fun run() {
-                println("11")
-                Thread.sleep(1000)
-            }
-        },"thread4").start()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

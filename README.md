@@ -41,7 +41,9 @@ class MyApplication: Application() {
     }
 }
 ```
-
-
+# 问题
+- 线程名:如果创建了线程后,线程马上就销毁了,则获取不到该线程在java层的线程名
+# ToDo
+- 显示线程状态
 # 文章总结
 链接：https://juejin.cn/post/7197980894362189884

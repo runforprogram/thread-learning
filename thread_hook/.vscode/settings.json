@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.log": "ignore",
+        "ios": "cpp"
+    }
+}

@@ -23,7 +23,7 @@ class ThreadWatcherInstaller : ContentProvider() {
     override fun onCreate(): Boolean {
         sContext = context
         SoLoader.init(context, false)
-        Log.d("TAG", "onCreate: ${BuildConfig.DEBUG}")
+        Log.d("ThreadWatcherInstaller", "onCreate: ${BuildConfig.DEBUG}")
         if (FlipperUtils.shouldEnableFlipper(ThreadWatcherInstaller.sContext)) {
             val flipperClient = AndroidFlipperClient.getInstance(context)
             flipperClient.addPlugin(ThreadWatcherPlugin())

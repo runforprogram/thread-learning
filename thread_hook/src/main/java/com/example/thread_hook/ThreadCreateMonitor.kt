@@ -21,10 +21,10 @@ object ThreadCreateMonitor {
 
 
     //通过反射获取 Thread 的nativePeer值
-    fun getNativePeer(t: Thread?): Long {
+    private fun getNativePeer(t: Thread): Long {
         return try {
             val nativePeerField: Field = Thread::class.java.getDeclaredField("nativePeer")
-            nativePeerField.setAccessible(true)
+            nativePeerField.isAccessible = true
             nativePeerField.get(t) as Long
         } catch (e: NoSuchFieldException) {
             throw IllegalAccessException("failed to get nativePeer value")
@@ -33,7 +33,7 @@ object ThreadCreateMonitor {
         }
     }
 
-    fun getNativeTid(t: Thread?): Int {
+    fun getNativeTid(t: Thread): Int {
         val nativePeer = getNativePeer(t)
         return getNativeTid(nativePeer)
     }

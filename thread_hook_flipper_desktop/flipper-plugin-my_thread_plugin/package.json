@@ -1,17 +1,17 @@
 {
   "$schema": "https://fbflipper.com/schemas/plugin-package/v2.json",
-  "name": "flipper-plugin-threadwatcherplugin",
-  "id": "threadwatcherplugin",
+  "name": "flipper-plugin-my_thread_plugin",
+  "id": "my_thread_plugin",
   "version": "1.0.0",
   "pluginType": "client",
   "main": "dist/bundle.js",
-  "flipperBundlerEntry": "src/index.tsx",
+  "flipperBundlerEntry": "src/index_table.tsx",
   "license": "MIT",
   "keywords": [
     "flipper-plugin"
   ],
   "icon": "apps",
-  "title": "ThreadWatcherPlugin",
+  "title": "thread_info_get",
   "scripts": {
     "lint": "flipper-pkg lint",
     "prepack": "flipper-pkg lint && flipper-pkg bundle",
@@ -20,16 +20,12 @@
     "test": "jest --no-watchman"
   },
   "peerDependencies": {
-    "@emotion/styled": "latest",
-    "flipper-plugin": "^0.177.0",
-    "antd": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "flipper-plugin": "^0.212.0",
+    "antd": "latest"
   },
   "devDependencies": {
     "@babel/preset-react": "latest",
     "@babel/preset-typescript": "latest",
-    "@emotion/styled": "latest",
     "@testing-library/react": "latest",
     "@types/jest": "latest",
     "@types/react": "latest",
@@ -38,15 +34,6 @@
     "flipper-plugin": "latest",
     "flipper-pkg": "latest",
     "jest": "latest",
-    "jest-mock-console": "latest",
-    "react": "latest",
-    "react-dom": "latest",
     "typescript": "latest"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "setupFiles": [
-      "<rootDir>/jest-setup.ts"
-    ]
   }
 }
